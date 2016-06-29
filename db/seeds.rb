@@ -16,6 +16,10 @@ posts = Post.all
     )
 end
 
+Post.find_or_create_by(title:"Postmaster, master of posts", body:"This post is not randomized.")
+
+Comment.find_or_create_by(post: posts.first, body:"I am the body of uniqueness.")
+
 puts "Seed finished"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
