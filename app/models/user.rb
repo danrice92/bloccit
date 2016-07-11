@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+    include Gravtastic
+    gravtastic
     before_save { self.email = email.downcase if email.present? }
     validates :name, length: { minimum: 1, maximum: 100 }, presence: true
     validates :password, presence: true, length: { minimum: 6 }, unless: :password_digest
