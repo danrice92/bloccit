@@ -1,0 +1,11 @@
+<div class="media">
+    <div class="media-body">
+        <small>
+            <%= topiccomment.user.name %> commented <%= time_ago_in_words(topiccomment.created_at) %> ago
+            <% if user_is_authorized_for_topiccomment?(topiccomment) %>
+                <%= link_to "Delete", [@topic, topiccomment], method: :delete %>
+            <% end %>
+        </small>
+        <p><%= topiccomment.body %></p>
+    </div>
+</div>
