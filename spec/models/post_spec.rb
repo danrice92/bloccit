@@ -79,4 +79,11 @@ RSpec.describe Post, type: :model do
       
   end
   
+  describe "after_create" do
+    it "favorites the post the user just made" do
+      expect(user.favorite_for(post)).not_to be_nil
+    end
+  end
+    
+  
 end
