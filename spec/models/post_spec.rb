@@ -5,9 +5,9 @@ RSpec.describe Post, type: :model do
   let(:description) { RandomData.random_paragraph }
   let(:title) { RandomData.random_sentence }
   let(:body) { RandomData.random_paragraph }
-  let(:topic) { Topic.create!(name: name, description: description) }
-  let(:user) { User.create!(name: "Bloccit User", email: "user@bloccit.com", password: "helloworld") }
-  let(:post) { topic.posts.create!(title: title, body: body, user: user) }
+  let(:topic) { create(:topic) }
+  let(:user) { create(:user) }
+  let(:post) { create(:post) }
   
   it { is_expected.to have_many(:labelings) }
   it { is_expected.to have_many(:labels).through(:labelings) }
@@ -27,8 +27,8 @@ RSpec.describe Post, type: :model do
   it { is_expected.to validate_length_of(:body).is_at_least(20) }
   
   describe "attributes" do
-    it "has title, body, and user attributes" do
-      expect(post).to have_attributes(title: title, body: body, user: user)
+    it "has title and body attributes" do
+      expect(post).to have_attributes(title: post.title, body: post.body)
     end
   end
   
