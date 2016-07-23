@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
     has_many :comments, dependent: :destroy
     has_many :votes, dependent: :destroy
     has_many :favorites, dependent: :destroy
+    has_many :favorite_posts, through: :favorites, source: :post, dependent: :destroy
     before_save { self.email = email.downcase if email.present? }
     before_save { self.role ||= :member }
     validates :name, length: { minimum: 1, maximum: 100 }, presence: true

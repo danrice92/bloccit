@@ -20,7 +20,22 @@
 </div>
 
 <h2>Posts</h2>
-<%= render @user.posts %>
+<% if @user.posts.any? %>
+    <%= render @user.posts %>
+<% else %>
+    <p><%= @user.name %> has not submitted any posts... yet.</p>
+<% end %>
 
 <h2>Comments</h2>
-<%= render @user.comments %>
+<% if @user.comments.any? %>
+    <%= render @user.comments %>
+<% else %>
+    <p><%= @user.name %> has not submitted any comments... yet.</p>
+<% end %>
+
+<h2>Favorites</h2>
+<% if @user.favorites.any? %>
+    <%= render @favorite_posts %>
+<% else %>
+    <p><%= @user.name %> has not favorited any posts... yet.</p>
+<% end %>
