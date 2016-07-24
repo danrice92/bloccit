@@ -41,3 +41,5 @@ gem 'bcrypt'
 
 # Used for keeping usernames and passwords secure with API keys despite being pushed to Github
 gem 'figaro', '1.0'
+
+gem 'responders', '~> 2.0'
