@@ -64,17 +64,6 @@ ActiveRecord::Schema.define(version: 20160725150152) do
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
   add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
-  create_table "topiccomments", force: :cascade do |t|
-    t.text     "body"
-    t.integer  "topic_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer  "user_id"
-  end
-
-  add_index "topiccomments", ["topic_id"], name: "index_topiccomments_on_topic_id"
-  add_index "topiccomments", ["user_id"], name: "index_topiccomments_on_user_id"
-
   create_table "topics", force: :cascade do |t|
     t.string   "name"
     t.boolean  "public",      default: true
