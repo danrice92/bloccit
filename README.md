@@ -25,7 +25,7 @@
   * solve world hunger, eliminate poverty, and become better looking!
   
 
-  You can view the app in action at dan-rice-bloccit.herokuapp.com!
+  You can view the app in action [here](http://dan-rice-bloccit.herokuapp.com)!
   
   
   Made with my mentor at [Bloc](http://bloc.io).
